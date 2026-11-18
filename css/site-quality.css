@@ -1,0 +1,81 @@
+/* Shared quality and accessibility layer for every page. Brand palette is intentionally retained. */
+:root {
+  color-scheme: light;
+  --nyla-ink: #26316a;
+  --nyla-muted: #62656b;
+  --nyla-paper: #ede3dd;
+  --nyla-accent: #808285;
+  --nyla-focus: #d29d57;
+  --nyla-radius: 0.75rem;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body { color: var(--nyla-ink); background: var(--nyla-paper); overflow-x: hidden; }
+img, video, iframe { max-width: 100%; }
+img { height: auto; }
+
+/* Keep the navigation available without hiding it at the top of the page. */
+.sticky-top { top: 0 !important; z-index: 1030; }
+.navbar { min-height: 5.25rem; }
+.navbar-brand img { width: auto; max-width: min(140px, 38vw); height: auto; max-height: 70px; object-fit: contain; }
+.navbar .navbar-nav .nav-link { color: #4c5058; font-weight: 600; transition: color .2s ease; }
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active { color: var(--nyla-ink); }
+.navbar-toggler { border-color: rgba(38,49,106,.35); }
+
+h1, h2, h3, h4, h5, h6 { color: var(--nyla-ink); line-height: 1.2; }
+p { line-height: 1.75; }
+.text-secondary { color: var(--nyla-muted) !important; }
+.bg-primary { background-color: var(--nyla-paper) !important; }
+.btn-primary { color: #fff; background-color: var(--nyla-ink); border-color: var(--nyla-ink); }
+.btn-primary:hover, .btn-primary:focus { color: #fff; background-color: #1b244f; border-color: #1b244f; }
+.btn, .form-control, .form-select { border-radius: .4rem; }
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--nyla-focus) !important;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+.hero-header { background-position: center; }
+.hero-header h1 { font-size: clamp(2.6rem, 7vw, 5.25rem); overflow-wrap: anywhere; }
+.header-carousel { min-width: 0; }
+.header-carousel img { width: 100% !important; height: clamp(240px, 38vw, 460px) !important; object-fit: cover; }
+.project-item { aspect-ratio: 4 / 3; background: #d5ccc7; }
+.project-item > img { width: 100%; height: 100%; object-fit: cover; }
+.project-overlay { background: linear-gradient(180deg, transparent 10%, rgba(20,27,64,.82) 100%); }
+.project-overlay:focus-visible, .project-item a:focus-visible { opacity: 1; }
+.modal-content { border: 0; border-radius: var(--nyla-radius); overflow: hidden; }
+.modal-body img { width: 100%; max-height: min(72vh, 760px); object-fit: contain; }
+
+.service-item { border-radius: var(--nyla-radius); }
+.service-item img { aspect-ratio: 4 / 3; object-fit: cover; }
+.testimonial-img img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.newsletter img { min-height: 260px; object-fit: cover; }
+.newsletter-text { background: rgba(255,255,255,.9); }
+.footer { color: rgba(255,255,255,.82); }
+.footer a { color: #fff; }
+.footer a:hover { color: #f3eee2; }
+.footer .footer-menu { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
+.back-to-top { right: 1.25rem; bottom: 1.25rem; z-index: 1020; }
+
+/* Make the lead form usable on small screens and accessible when opened. */
+.lead-popup-overlay { padding: 1rem; overflow-y: auto; }
+.lead-popup-container { max-height: calc(100dvh - 2rem); overflow-y: auto; color: var(--nyla-ink); }
+.lead-popup-container label { display: block; }
+.lead-form-field { display: block; width: 100%; box-sizing: border-box; }
+.lead-popup-close { min-width: 2.75rem; min-height: 2.75rem; }
+
+@media (max-width: 767.98px) {
+  .container-fluid.py-5, .container.py-5 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+  .hero-header { padding-top: 6rem; }
+  .header-carousel { padding: 1rem 2rem 1rem 0; }
+  .newsletter-text > div { padding: 1.5rem !important; }
+  .process-section { padding: 3rem 1rem !important; }
+  .process-container-horizontal { gap: 1.5rem !important; }
+  .footer .copyright { text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .wow { visibility: visible !important; animation-name: none !important; }
+}

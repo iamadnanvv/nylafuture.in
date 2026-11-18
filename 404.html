@@ -1,63 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Page Not Found | Nyla Future</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#26316a">
+  <meta name="robots" content="noindex, follow">
+  <title>404 — Page Not Found | Nyla Future</title>
+  <meta name="description" content="The page you’re looking for could not be found. Explore Nyla Future’s interior design website instead.">
+  <link rel="icon" type="image/png" href="img/nylalogo2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: "Open Sans", sans-serif;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #ffffff;
-      background-color:#26316a;
-      -webkit-text-size-adjust: 100%;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-    .logo {
-      max-width: 150px;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      margin: 0.5rem 0;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #ffffff;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #333333;
-    }
+    :root { color-scheme: light; --ink: #26316a; --paper: #ede3dd; --muted: #5c6070; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; padding: 2rem 1.25rem; display: grid; place-items: center; background: var(--paper); color: var(--ink); font: 1rem/1.65 'Open Sans', sans-serif; text-align: center; }
+    main { width: min(100%, 38rem); padding: clamp(2rem, 7vw, 4rem); background: #fff; border-radius: 1rem; box-shadow: 0 1.5rem 4rem rgba(38,49,106,.12); }
+    .logo { width: min(150px, 45vw); height: auto; margin: 0 auto 1.5rem; }
+    .code { margin: 0; color: var(--muted); font: 600 1rem 'Space Grotesk', sans-serif; letter-spacing: .16em; }
+    h1 { margin: .25rem 0 1rem; font: 700 clamp(2rem, 7vw, 3.25rem)/1.1 'Space Grotesk', sans-serif; }
+    p { margin: 0 0 1.5rem; color: var(--muted); }
+    .links { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+    .button { display: inline-flex; min-height: 2.9rem; align-items: center; justify-content: center; padding: .7rem 1.15rem; border: 2px solid var(--ink); border-radius: .4rem; background: var(--ink); color: #fff; font-weight: 700; text-decoration: none; transition: background .2s, color .2s; }
+    .button.secondary { background: transparent; color: var(--ink); }
+    .button:hover { background: #1b244f; color: #fff; }
+    a:focus-visible { outline: 3px solid #d29d57; outline-offset: 3px; }
+    footer { margin-top: 2rem; color: var(--muted); font-size: .85rem; }
+    footer a { color: var(--ink); }
   </style>
 </head>
 <body>
-  <img src="https://www.nylainteriors.in/img/nylalogo.png" alt="Nyla Future Logo" class="logo">
-  <h1>404 — Page Not Found</h1>
-  <p>Oops! The page you’re looking for doesn’t exist.</p>
-  <p>Here are some helpful links instead:</p>
-  <ul style="list-style:none; padding:0;">
-    <li><a href="index.html" class="btn">Back to Homepage</a></li>
-  </ul>
-  <div class="footer">
-Developed & Maintained by <a href="https://adwebcomicagency.vercel.app" target="_blank" rel="noopener noreferrer">Ad Web Comic Agency</a>
-</div>
+  <main>
+    <a href="index.html" aria-label="Nyla Future home"><img src="img/nylalogo2.png" alt="Nyla Future" class="logo"></a>
+    <p class="code">ERROR 404</p>
+    <h1>Page not found</h1>
+    <p>The page may have moved or the address may be incorrect. Let’s help you find your way.</p>
+    <nav class="links" aria-label="Helpful links">
+      <a class="button" href="index.html">Back to home</a>
+      <a class="button secondary" href="contact.html">Contact us</a>
+    </nav>
+    <footer>Developed &amp; maintained by <a href="https://adwebcomicagency.vercel.app" target="_blank" rel="noopener noreferrer">Ad Web Comic Agency</a></footer>
+  </main>
 </body>
 </html>
